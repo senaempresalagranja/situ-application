@@ -89,7 +89,7 @@ const Dashboard = () => {
     {
       avatar: { src: avatar1, status: 'success' },
       user: {
-        name: 'Yiorgos Avraamu',
+        name: 'Luis Alejandro Muñoz Garcia',
         new: true,
         registered: 'Jan 1, 2023',
       },

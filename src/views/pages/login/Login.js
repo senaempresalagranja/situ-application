@@ -1,84 +1,73 @@
-import React from 'react'
+import './style.css'
 import { Link } from 'react-router-dom'
-import {
-  CButton,
-  CCard,
-  CCardBody,
-  CCardGroup,
-  CCol,
-  CContainer,
-  CForm,
-  CFormInput,
-  CInputGroup,
-  CInputGroupText,
-  CRow,
-} from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser } from '@coreui/icons'
 
 const Login = () => {
   return (
-    <div className="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center">
-      <CContainer>
-        <CRow className="justify-content-center">
-          <CCol md={8}>
-            <CCardGroup>
-              <CCard className="p-4">
-                <CCardBody>
-                  <CForm>
-                    <h1>Login</h1>
-                    <p className="text-body-secondary">Sign In to your account</p>
-                    <CInputGroup className="mb-3">
-                      <CInputGroupText>
-                        <CIcon icon={cilUser} />
-                      </CInputGroupText>
-                      <CFormInput placeholder="Username" autoComplete="username" />
-                    </CInputGroup>
-                    <CInputGroup className="mb-4">
-                      <CInputGroupText>
-                        <CIcon icon={cilLockLocked} />
-                      </CInputGroupText>
-                      <CFormInput
-                        type="password"
-                        placeholder="Password"
-                        autoComplete="current-password"
-                      />
-                    </CInputGroup>
-                    <CRow>
-                      <CCol xs={6}>
-                        <CButton color="primary" className="px-4">
-                          Login
-                        </CButton>
-                      </CCol>
-                      <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
-                          Forgot password?
-                        </CButton>
-                      </CCol>
-                    </CRow>
-                  </CForm>
-                </CCardBody>
-              </CCard>
-              <CCard className="text-white bg-primary py-5" style={{ width: '44%' }}>
-                <CCardBody className="text-center">
-                  <div>
-                    <h2>Sign up</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>
-                        Register Now!
-                      </CButton>
-                    </Link>
-                  </div>
-                </CCardBody>
-              </CCard>
-            </CCardGroup>
-          </CCol>
-        </CRow>
-      </CContainer>
+    <div class="wrapper">
+      <nav class="nav">
+        <div class="nav-logo">
+          <p>
+            INSITU <span>.</span>
+          </p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li>
+              <Link to={`/`} class="link active">
+                Inicio de Sesion
+              </Link>
+            </li>
+            <li>
+              <Link to={`/register`} class="link">
+                Usuario Invitado
+              </Link>
+            </li>
+            <li>
+              <Link to={`/`} class="link">
+                Volver al Blog
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-menu-btn">
+          <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+      <div class="form-box">
+        <div class="login-container" id="login">
+          <div class="top">
+            <span>
+              Don't have an account?{' '}
+              <a href="#" onclick="register()">
+                Sign Up
+              </a>
+            </span>
+            <header>Login</header>
+          </div>
+          <div class="input-box">
+            <input type="text" class="input-field" placeholder="Username or Email" />
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" class="input-field" placeholder="Password" />
+            <i class="bx bx-lock-alt"></i>
+          </div>
+          <div class="input-box">
+            <input type="submit" class="submit" value="Sign In" />
+          </div>
+          <div class="two-col">
+            <div class="one">
+              <input type="checkbox" id="login-check" />
+              <label for="login-check"> Remember Me</label>
+            </div>
+            <div class="two">
+              <label>
+                <a href="#">Forgot password?</a>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
