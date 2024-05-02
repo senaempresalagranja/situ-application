@@ -1,7 +1,18 @@
 import { Link } from 'react-router-dom'
 import '../../../styles/style.css'
+import { useForm } from '../../../hooks'
 
+// estado inicial del formulario
+const passwordVerifyForm = {
+  email: '',
+}
 const VerifyPassword = () => {
+  // creamos el estado del formulario verificacion de correo
+  const { email, onInputChange: onVerifyChange } = useForm(passwordVerifyForm)
+  const onSubmitVerifyEmail = (event) => {
+    event.preventDefault()
+    // startVerifyEmail({ email: loginEmail})
+  }
   return (
     <div className="wrapper">
       <nav className="nav">
@@ -35,7 +46,7 @@ const VerifyPassword = () => {
           </ul>
         </div>
       </nav>
-      <div className="form-box">
+      <form className="form-box" onSubmit={onSubmitVerifyEmail}>
         <div className="login-container" id="login">
           <div className="top">
             <header>Olvide mi Contraseña</header>
@@ -49,10 +60,12 @@ const VerifyPassword = () => {
               type="email"
               className="input-field"
               name="email"
+              value={email}
               autoFocus
               placeholder="Digitar Correo Electronico"
               maxLength={60}
               minLength={2}
+              onChange={onVerifyChange}
             />
             <i className="bx bx-user"></i>
           </div>
@@ -78,7 +91,7 @@ const VerifyPassword = () => {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   )
 }

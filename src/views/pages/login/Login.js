@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom'
 import '../../../styles/style.css'
-
+import { useForm } from '../../../hooks'
+// estado inicial del formulario de login
+const loginFieldsForm = {
+  loginEmail: '',
+  loginPassword: '',
+}
 const Login = () => {
+  // creamos el estado del formulario del login
+  const { loginEmail, loginPassword, onInputChange: onLoginInputChange } = useForm(loginFieldsForm)
+  // creamos una funcion para hacer envio de los datos del login
+  const onSubmitLogin = (event) => {
+    event.preventDefault()
+    // startLogin({ email: loginEmail, password: loginPassword })
+  }
   return (
     <div className="wrapper">
       <nav className="nav">
@@ -30,7 +42,7 @@ const Login = () => {
           </ul>
         </div>
       </nav>
-      <div className="form-box">
+      <form className="form-box" autoComplete="off" onSubmit={onSubmitLogin}>
         <div className="login-container" id="login">
           <div className="top">
             <header>Inicio de Sesion</header>
@@ -43,11 +55,14 @@ const Login = () => {
             <input
               type="email"
               className="input-field"
-              name="email"
+              name="loginEmail"
               autoFocus
               placeholder="Digitar Correo Electronico"
               maxLength={60}
               minLength={2}
+              value={loginEmail}
+              onChange={onLoginInputChange}
+              required={true}
             />
             <i className="bx bx-user"></i>
           </div>
@@ -55,10 +70,13 @@ const Login = () => {
             <input
               type="password"
               className="input-field"
-              name="password"
+              name="loginPassword"
               maxLength={30}
               min={4}
               placeholder="Digitar Contraseña"
+              value={loginPassword}
+              onChange={onLoginInputChange}
+              required={true}
             />
             <i className="bx bx-lock-alt"></i>
           </div>
@@ -83,7 +101,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   )
 }
