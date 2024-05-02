@@ -18,13 +18,157 @@ import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 const _nav = [
   {
     component: CNavItem,
-    name: 'Dashboard',
+    name: 'Panel de Administrador',
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
-    badge: {
-      color: 'info',
-      text: 'NEW',
-    },
+  },
+  {
+    component: CNavTitle,
+    name: 'Gestion',
+  },
+  {
+    component: CNavGroup,
+    name: 'Aprendices',
+    to: '/aprendiz',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Listado de Aprendices',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Aprendiz',
+        to: '/base/accordion',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Memorandos',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Listado de Memorandos',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Memorando',
+        to: '/base/accordion',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Areas',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Listado de Areas',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Area',
+        to: '/base/accordion',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Unidades de F.',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Listado de Unidad',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Unidad',
+        to: '/base/accordion',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Fichas',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Listado de Fichas',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Ficha',
+        to: '/base/accordion',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Programas de F.',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Listado de Programas',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Programa',
+        to: '/base/accordion',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Turnos Especiales',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Lista de Turnos Especiales',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Programa',
+        to: '/base/accordion',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Turnos Rutinarios',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Lista de Turnos Rutinarios',
+        to: '/base/accordion',
+      },
+      {
+        component: CNavItem,
+        name: 'Registrar Turno Rutinario',
+        to: '/base/accordion',
+      },
+    ],
   },
   {
     component: CNavTitle,
@@ -42,6 +186,7 @@ const _nav = [
     to: '/theme/typography',
     icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
   },
+
   {
     component: CNavTitle,
     name: 'Components',

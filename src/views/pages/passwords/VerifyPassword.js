@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import '../../../styles/style.css'
 
-const Login = () => {
+const VerifyPassword = () => {
   return (
     <div className="wrapper">
       <nav className="nav">
@@ -13,12 +13,17 @@ const Login = () => {
         <div className="nav-menu" id="navMenu">
           <ul>
             <li>
-              <Link to={`/`} className="link active">
-                Inicio de Sesion
+              <Link to={`/verify-password`} className="link active">
+                Olvide mi Contraseña
               </Link>
             </li>
             <li>
-              <Link to={`/register`} className="link">
+              <Link to={`/login`} className="link">
+                Iniciar Sesion
+              </Link>
+            </li>
+            <li>
+              <Link to={`/`} className="link">
                 Usuario Invitado
               </Link>
             </li>
@@ -33,10 +38,10 @@ const Login = () => {
       <div className="form-box">
         <div className="login-container" id="login">
           <div className="top">
-            <header>Inicio de Sesion</header>
+            <header>Olvide mi Contraseña</header>
             <span>¡Bienvenida Lider de Talento Humano!</span>
             <span>
-              Por favor Ingresa tus credenciales para gestionar los turnos rutinarios de esta semana
+              Para realizar recuperacion de tu contraseña por favor ingresa tu correo electronico
             </span>
           </div>
           <div className="input-box">
@@ -51,24 +56,14 @@ const Login = () => {
             />
             <i className="bx bx-user"></i>
           </div>
+
           <div className="input-box">
-            <input
-              type="password"
-              className="input-field"
-              name="password"
-              maxLength={30}
-              min={4}
-              placeholder="Digitar Contraseña"
-            />
-            <i className="bx bx-lock-alt"></i>
-          </div>
-          <div className="input-box">
-            <input type="submit" className="submit" value="Iniciar Sesion" />
+            <input type="submit" className="submit" value="Verificar" />
           </div>
           <div className="two-col">
             <div className="two">
               <label>
-                <Link to={`/verify-password`}>Olvidaste Tu contraseña?</Link>
+                <Link to={`/login`}>Iniciar Sesion</Link>
               </label>
             </div>
             <div className="two links-sm">
@@ -88,4 +83,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default VerifyPassword
