@@ -40,7 +40,7 @@ const _nav = [
       {
         component: CNavItem,
         name: 'Registrar Aprendiz',
-        to: '/base/accordion',
+        to: '/aprendiz/register',
       },
     ],
   },
